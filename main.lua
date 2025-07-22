@@ -6,7 +6,7 @@ local SourceURL = 'https://github.com/depthso/Roblox-ImGUI/raw/main/ImGui.lua'
 ImGui = loadstring(game:HttpGet(SourceURL))()
 
 local Window = ImGui:CreateWindow({
-	Title = "GL Service",
+	Title = "GL Service @rbxscripting",
 	Size = UDim2.new(0, 300, 0, 200),
 	Position = UDim2.new(0.5, 0, 0, 70)
 })
