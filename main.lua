@@ -12,7 +12,7 @@ local Window = ImGui:CreateWindow({
 })
 Window:Center()
 
-local ConsoleTab = Window:CreateTab({ Name = "Join | Leave" })
+local ConsoleTab = Window:CreateTab({ Name = "Join Log" })
 
 local Console = ConsoleTab:Console({
 	Text = "Console initialized.",
@@ -60,7 +60,7 @@ local function logChatMessage(playerName: string, message: string)
 	local timeColor = "rgb(0, 170, 255)"
 
 	ChatConsole:AppendText(
-		`<font color="{timeColor}">[{timestamp}]</font> All {playerName}: {message}`
+		`<font color="{timeColor}">[{timestamp}]</font> {playerName}: {message}`
 	)
 end
 
