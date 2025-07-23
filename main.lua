@@ -72,6 +72,40 @@ local function hookChatForPlayer(player)
 	end)
 end
 
+local PlayerTab = Window:CreateTab({ Name = "Player Settings" })
+
+PlayerTab:Label({
+	Text = [[     Main]],
+	RichText = true,
+	TextWrapped = true,
+})
+
+PlayerTab:Slider({
+	Label = "Walkspeed",
+	Format = "%.d/%s",
+	Value = 1,
+	MinValue = 1,
+	MaxValue = 500,
+	ReadOnly = false,
+
+	Callback = function(self, Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end,
+}):SetValue(16)
+
+PlayerTab:Slider({
+	Label = "Jumppower",
+	Format = "%.d/%s",
+	Value = 1,
+	MinValue = 1,
+	MaxValue = 500,
+	ReadOnly = false,
+
+	Callback = function(self, Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end,
+}):SetValue(50)
+
 for _, player in ipairs(Players:GetPlayers()) do
 	if player ~= Players.LocalPlayer then
 		logPlayer(player.Name, true)
